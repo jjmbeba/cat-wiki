@@ -7,8 +7,8 @@ import Characteristic from "./Characteristic";
 export default function Home({ params : {id} }) {
 
   const foundCat = catArr.find((cat) => cat.id === id);
+
   let {
-    name,
     description,
     life_span,
     temperament,
@@ -34,7 +34,7 @@ export default function Home({ params : {id} }) {
         />
         <div>
           <h2 className="font-[600] text-[36px] leading-[44px] text-[#291507]">
-            {name}
+            {foundCat.name}
           </h2>
           <p className="pt-[25px] font-[500] text-[18px] leading-[22px] text-[#291507]">
             {description}
