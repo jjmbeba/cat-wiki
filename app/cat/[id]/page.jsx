@@ -1,7 +1,5 @@
 import Footer from "@/app/Footer";
 import catArr from "@/CatsArr";
-import characteristics from "@/characteristics";
-import Image from "next/image";
 import Characteristic from "./Characteristic";
 
 export default function Home({ params : {id} }) {
@@ -28,7 +26,7 @@ export default function Home({ params : {id} }) {
     <div className="pt-[49px] pb-[273px] pl-[96px] relative">
       <div className=" flex gap-[100px] pl-[52px] pr-[154px]">
         <img
-          src={foundCat.image.url || ''}
+          src={foundCat ? foundCat.image.url : ''}
           alt="cat-image"
           className="h-[371px] w-[371px] object-cover rounded-[24px]"
         />
