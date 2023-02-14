@@ -27,11 +27,11 @@ const Hero = () => {
 
   return (
     <div className="pt-[21px] lg:pt-[115px] pl-[29px] lg:pl-[108px] pb-[25px] lg:pb-[144px] w-full bg-hero-sm lg:bg-hero-lg bg-cover bg-center rounded-t-[42px]">
-      <Image
+      <img
         src="/CatWikiLogo.svg"
-        className="invert contrast-[150%] h-auto hidden lg:block"
-        height={87}
-        width={309}
+        className="invert contrast-[150%] w-auto hidden lg:block h-[87px]"
+        // height={87}
+        // width={309}
         alt="logo"
       />
       <h2 className={`${mystery.className} text-white text-[14px] leading-[19px] lg:hidden`}>
