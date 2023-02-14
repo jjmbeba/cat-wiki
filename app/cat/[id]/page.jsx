@@ -32,29 +32,29 @@ export default function Home({ params : {id} }) {
         />
         <div>
           <h2 className="font-[600] text-[36px] leading-[44px] text-[#291507]">
-            {foundCat.name || ''}
+            {foundCat ? foundCat.name : ''}
           </h2>
           <p className="pt-[25px] font-[500] text-[18px] leading-[22px] text-[#291507]">
-            {foundCat.description || ''}
+            {foundCat ? foundCat.description : ''}
           </p>
           <div className="characteristic">
-            <span className="font-[700]">Temperament:</span> {foundCat.temperament || ''}
+            <span className="font-[700]">Temperament:</span> {foundCat ? foundCat.temperament : ''}
           </div>
           <div className="characteristic">
-            <span className="font-[700]">Origin:</span> {foundCat.origin || ''}
+            <span className="font-[700]">Origin:</span> {foundCat ? foundCat.origin : ''}
           </div>
           <div className="characteristic">
-            <span className="font-[700]">Life Span:</span> {foundCat.life_span || ''} years
+            <span className="font-[700]">Life Span:</span> {foundCat ? foundCat.life_span : ''} years
           </div>
           <div>
-            <Characteristic name='Adaptability' rating={foundCat.adaptability || ''}/>
-            <Characteristic name='Affection level' rating={foundCat.affection_level || ''}/>
-            <Characteristic name='Child friendly' rating={foundCat.child_friendly || ''}/>
-            <Characteristic name='Grooming' rating={foundCat.grooming || ''}/>
-            <Characteristic name='Intelligence' rating={foundCat.intelligence || ''}/>
-            <Characteristic name='Health issues' rating={foundCat.health_issues || ''}/>
-            <Characteristic name='Social needs' rating={foundCat.social_needs || ''}/>
-            <Characteristic name='Stranger friendly' rating={foundCat.stranger_friendly || ''}/>
+            <Characteristic name='Adaptability' rating={foundCat ? foundCat.adaptability : ''}/>
+            <Characteristic name='Affection level' rating={foundCat ? foundCat.affection_level : ''}/>
+            <Characteristic name='Child friendly' rating={foundCat ? foundCat.child_friendly : ''}/>
+            <Characteristic name='Grooming' rating={foundCat ? foundCat.grooming : ''}/>
+            <Characteristic name='Intelligence' rating={foundCat ? foundCat.intelligence : ''}/>
+            <Characteristic name='Health issues' rating={foundCat ? foundCat.health_issues : ''}/>
+            <Characteristic name='Social needs' rating={foundCat ? foundCat.social_needs : ''}/>
+            <Characteristic name='Stranger friendly' rating={foundCat ? foundCat.stranger_friendly : ''}/>
           </div>
         </div>
       </div>
