@@ -23,18 +23,18 @@ export default function Home({ params : {id} }) {
   // } = foundCat;
 
   return (
-    <div className="pt-[49px] pb-[273px] pl-[96px] relative">
-      <div className=" flex gap-[100px] pl-[52px] pr-[154px]">
+    <div className="pt-[49px] pb-[273px] px-[18px] lg:px-0 lg:pl-[96px] relative">
+      <div className=" flex items-center lg:items-start flex-col lg:flex-row gap-[18px] lg:gap-[100px] pl-0 lg:pl-[52px] pr-0 lg:pr-[154px]">
         <img
           src={foundCat ? foundCat.image.url : ''}
           alt="cat-image"
-          className="h-[371px] w-[371px] object-cover rounded-[24px]"
+          className="h-[200px] lg:h-[371px] w-[200px] lg:w-[371px] object-cover rounded-[24px]"
         />
         <div>
-          <h2 className="font-[600] text-[36px] leading-[44px] text-[#291507]">
+          <h2 className="font-[600] text-[24px] lg:text-[36px] leading-[28px] lg:leading-[44px] text-[#291507]">
             {foundCat ? foundCat.name : ''}
           </h2>
-          <p className="pt-[25px] font-[500] text-[18px] leading-[22px] text-[#291507]">
+          <p className="pt-[25px] font-[500] text-[16px] lg:text-[18px] leading-[20px] lg:leading-[22px] text-[#291507]">
             {foundCat ? foundCat.description : ''}
           </p>
           <div className="characteristic">

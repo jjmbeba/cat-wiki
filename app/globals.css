@@ -4,7 +4,7 @@
 
 @layer components{
     .characteristic{
-        @apply pt-[32px] text-[16px] leading-[20px] text-black;
+        @apply pt-[24px] lg:pt-[32px] text-[14px] lg:text-[16px] leading-[18px] lg:leading-[20px] text-black;
     }
 }
 
