@@ -6,13 +6,17 @@
 
 export default async function handler(req, res) {
   try {
-    const cats = await fetch(
-      `https://api.thecatapi.com/v1/breeds?api_key=${process.env.API_KEY}`
+    const { catId } = req.query;
+
+    const foundCat = await fetch(
+      `https://api.thecatapi.com/v1/breeds/${catId}?api_key=${process.env.API_KEY}}`
     ).then((res) => res.json());
-    return res.status(200).send(cats);
+
+    return res.status(200).send(foundCat);
+
   } catch (error) {
     res.error(403).json({
-      error:'Error has occurred'
-    })
+      error: "Error has occurred",
+    });
   }
 }

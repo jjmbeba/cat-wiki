@@ -6,6 +6,7 @@ import ListItem from "./components/ListItem";
 import catArr from "@/CatsArr";
 import { Mystery_Quest } from "@next/font/google";
 import SearchMenu from "./SearchMenu";
+import { useQuery } from "react-query";
 
 const mystery = Mystery_Quest({
   subsets: ["latin"],
@@ -17,31 +18,38 @@ const Hero = () => {
   const [foundResults, setFoundResults] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
-
-  const handleClick = () => {
-    setShowMenu(true);
-  }
-
+  
   useEffect(() => {
     setFoundResults(
-      catArr.filter(({ name }) =>
-        name.toLowerCase().includes(search.toLowerCase())
+      data?.filter(({ name }) =>
+      name.toLowerCase().includes(search.toLowerCase())
       )
-    );
-  }, [search]);
-
-  return (
+      );
+    }, [search]);
+    
+    const handleChange = (e) => {
+      e.preventDefault();
+      setSearch(e.target.value);
+    };
+    
+    const handleClick = () => {
+      setShowMenu(true);
+    }
+    
+    const {isLoading, error, data} = useQuery('data',() => fetch('http://localhost:3000/api/cats').then(res => res.json()))
+    
+    if(isLoading) return 'Loading...'
+    
+    if(error) return 'An error has occurred'+error.message
+    
+    console.log(data);
+    
+    return (
     <>
       <div className="pt-[21px] lg:pt-[115px] pl-[29px] lg:pl-[108px] pb-[25px] lg:pb-[144px] w-full bg-hero-sm lg:bg-hero-lg bg-cover bg-center rounded-t-[42px]">
         <img
           src="/logo.svg"
           className="invert contrast-[150%] w-auto hidden lg:block h-[87px]"
-          // height={87}
-          // width={309}
           alt="logo"
         />
         <h2
@@ -91,7 +99,7 @@ const Hero = () => {
             }`}
           >
             <div className="listbox w-full h-full overflow-y-scroll first:pt-[28px] last:pb-[28px] flex flex-col items-start gap-[21px]">
-              {foundResults.map(({ name, id }) => (
+              {foundResults?.map(({ name, id }) => (
                 <ListItem key={id} id={id} name={name} />
               ))}
             </div>

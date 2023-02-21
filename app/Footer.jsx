@@ -5,7 +5,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className="absolute bottom-0 pt-[34px] pb-[42px] w-[339px] lg:w-[1049px] bg-black px-[18px] lg:pl-[108px] lg:pr-[32px] rounded-t-[42px] flex flex-col lg:flex-row items-start gap-[21px] lg:items-center lg:justify-between">
+    <div className="absolute bottom-0 left-[18px] lg:left-[96px] pt-[34px] pb-[42px] w-[339px] lg:w-[1049px] bg-black px-[18px] lg:pl-[108px] lg:pr-[32px] rounded-t-[42px] flex flex-col lg:flex-row items-start gap-[21px] lg:items-center lg:justify-between">
       <Image
         src="/logo.svg"
         className="invert contrast-[150%]"
