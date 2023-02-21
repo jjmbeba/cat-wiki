@@ -21,14 +21,14 @@ export default function RootLayout({ children }) {
       <header>
         <div className='lg:pl-[96px] lg:pt-[36px] pl-[18px] pt-[23px]'>
           <Image
-            src='/CatWikiLogo.svg'
+            src='/logo.svg'
             width={127}
             height={42}
             alt='logo'
             className='hidden lg:block'
           />
           <Image
-            src='/CatWikiLogo.svg'
+            src='/logo.svg'
             width={147}
             height={33}
             alt='logo'
