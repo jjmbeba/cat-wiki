@@ -7,7 +7,7 @@
 export default async function handler(req, res) {
   try {
     const cats = await fetch(
-      `https://api.thecatapi.com/v1/breeds?api_key=${process.env.API_KEY}`
+      `https://api.thecatapi.com/v1/breeds?limit=50&api_key=${process.env.API_KEY}`
     ).then((res) => res.json());
     return res.status(200).send(cats);
   } catch (error) {
