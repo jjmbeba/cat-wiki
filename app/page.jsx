@@ -1,5 +1,4 @@
 import { Montserrat } from "@next/font/google";
-import Image from "next/image";
 import Benefits from "./Benefits";
 import Footer from "./Footer";
 import Hero from "./Hero";

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Cat from "./Cat";
+import Cat from "./components/Cat";
 import catArr from "@/CatsArr";
 import Image from "next/image";
 
@@ -28,7 +28,7 @@ const MostSearched = async () => {
             />
         </Link>
       </div>
-      <div className="pt-[26px] lg:pt-[46px] grid grid-cols-2 lg:grid-cols-4 gap-x-[13px] gap-y-[18px] lg:gap-[51px]">
+      <div className="pt-[26px] lg:pt-[46px] grid grid-cols-2 lg:grid-cols-4 gap-x-[16px] gap-y-[18px] lg:gap-[51px]">
         {catArr.map(({ name, id, image }) => (
           <Cat name={name} id={id} key={id} image={image.url} />
         ))}
